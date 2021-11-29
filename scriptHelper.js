@@ -4,7 +4,7 @@ require('isomorphic-fetch');
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
 	// Here is the HTML formatting for our mission target div.
 
-	const missionTarget = document.getElementById('missionTarget');
+	const missionTarget = document.querySelector("[data-testid='missionTarget']");
 	//let index = '';
 	// for (mission in missionTarget) {
 	// 	for (let i = 0; i < mission.length; i++) {
