@@ -5,9 +5,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 	// Here is the HTML formatting for our mission target div.
 
 	const missionTarget = document.querySelector("[data-testid='missionTarget']");
-	//let index = '';
-	// for (mission in missionTarget) {
-	// 	for (let i = 0; i < mission.length; i++) {
 	missionTarget.innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
@@ -19,11 +16,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 </ol>
                 <img src="${imageUrl}">`;
 }
-// return console.log(index);
-
-console.log(missionTarget);
-
-//index = (index + 1) % json.length;
 
 function validateInput(testInput) {
 	if (testInput === '') {
@@ -94,13 +86,10 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-	//for (let i = 0; i < planets.length; i++) {
-	//console.log(planets.length);
 	let planet = Math.floor(Math.random() * planets.length);
 	return planet;
-	//image.setAttribute("src", planets[planet]);
 }
-//}
+
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;

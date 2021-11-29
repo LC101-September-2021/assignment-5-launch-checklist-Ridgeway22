@@ -34,7 +34,6 @@ window.addEventListener('load', function() {
 		let fuelLevel = document.querySelector("input[name='fuelLevel']");
 		let cargoMass = document.querySelector("input[name='cargoMass']");
 		let faultyItems = document.getElementById('faultyItems');
-		console.log(cargoMass.value, fuelLevel.value);
 		formSubmission(document, faultyItems, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
 	});
 });
