@@ -24,30 +24,35 @@ function validateInput(testInput) {
 	if (isNaN(testInput) || isNaN(testInput)) {
 		return 'Not a Number';
 	}
-	if (typeof testInput === 'number' || typeof testInput === 'number') {
+	if (typeof testInput == 'number' || typeof testInput === 'number') {
+		console.log(typeof testInput);
+		console.log(testInput);
 		return 'Is a Number';
 	}
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-	console.log(list);
 	if (
 		validateInput(pilot) === 'Empty' ||
 		validateInput(copilot) === 'Empty' ||
 		validateInput(fuelLevel) === 'Empty' ||
 		validateInput(cargoLevel) === 'Empty'
 	) {
-		alert('All fields are required');
+		list.style.visibility = 'hidden';
+		return alert('All fields are required');
 	}
 	if (validateInput(Number(pilot)) === 'Is a Number' || validateInput(Number(copilot)) === 'Is a Number') {
-		alert('Pilot and Copilot should not be numbers');
+		return alert('Pilot and Co-pilot should not be a number');
 	}
+	if (validateInput(Number(fuelLevel)) === 'Is a Number' || validateInput(Number(cargoLevel)) === 'Is a Number') {
+	}
+
 	if (validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
-		alert('fuelLevel and CargoLevel should be a number');
+		return alert('fuelLevel and CargoLevel should be a number');
 	}
 
 	let launchStatus = document.getElementById('launchStatus');
-	//let faultyItems = document.getElementById('faultyItems');
+	let faultyItems = document.getElementById('faultyItems');
 	let pilotStatus = document.getElementById('pilotStatus');
 	let copilotStatus = document.getElementById('copilotStatus');
 	let fuelStatus = document.getElementById('fuelStatus');
@@ -71,12 +76,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 	if (fuelLevel > 9999 && cargoLevel < 10000) {
 		launchStatus.style.color = 'rgb(65, 159, 106)';
 		launchStatus.innerHTML = 'Shuttle is Ready for Launch';
+		list.style.visibility = 'visible';
 	} else {
 		launchStatus.style.color = 'rgb(199, 37, 78)';
 		launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
+		list.style.visibility = 'visible';
 	}
 
-	list.style.visibility = 'visible';
+	// list.style.visibility = 'visible';
 }
 
 async function myFetch() {

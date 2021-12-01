@@ -26,6 +26,7 @@ window.addEventListener('load', function() {
 		});
 
 	let form = document.querySelector("[data-testid='testForm']");
+	document.getElementById('faultyItems').style.visibility = 'hidden';
 	form.addEventListener('submit', function(e) {
 		e.preventDefault();
 		let copilotName = document.querySelector("input[name='copilotName']");
