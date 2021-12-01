@@ -47,7 +47,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 	}
 
 	let launchStatus = document.getElementById('launchStatus');
-	let faultyItems = document.getElementById('faultyItems');
+	//let faultyItems = document.getElementById('faultyItems');
 	let pilotStatus = document.getElementById('pilotStatus');
 	let copilotStatus = document.getElementById('copilotStatus');
 	let fuelStatus = document.getElementById('fuelStatus');
@@ -76,7 +76,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 		launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
 	}
 
-	faultyItems.style.visibility = 'visible';
+	list.style.visibility = 'visible';
 }
 
 async function myFetch() {

@@ -28,7 +28,6 @@ window.addEventListener('load', function() {
 	let form = document.querySelector("[data-testid='testForm']");
 	form.addEventListener('submit', function(e) {
 		e.preventDefault();
-		console.log('submitted');
 		let copilotName = document.querySelector("input[name='copilotName']");
 		let pilotName = document.querySelector("input[name='pilotName']");
 		let fuelLevel = document.querySelector("input[name='fuelLevel']");
