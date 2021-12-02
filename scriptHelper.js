@@ -24,7 +24,8 @@ function validateInput(testInput) {
 	if (isNaN(testInput) || isNaN(testInput)) {
 		return 'Not a Number';
 	}
-	if (typeof testInput == 'number' || typeof testInput === 'number') {
+
+	if (typeof testInput === 'number' || typeof testInput === 'number') {
 		console.log(typeof testInput);
 		console.log(testInput);
 		return 'Is a Number';
@@ -41,6 +42,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 		list.style.visibility = 'hidden';
 		return alert('All fields are required');
 	}
+
 	if (validateInput(Number(pilot)) === 'Is a Number' || validateInput(Number(copilot)) === 'Is a Number') {
 		return alert('Pilot and Co-pilot should not be a number');
 	}
@@ -93,8 +95,11 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
+	console.log(planets);
+
 	let planet = Math.floor(Math.random() * planets.length);
-	return planet;
+	console.log(planets[planet]);
+	return planets[planet];
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;

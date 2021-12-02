@@ -14,15 +14,7 @@ window.addEventListener('load', function() {
 			// Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
 			let jack = pickPlanet(listedPlanets);
 
-			addDestinationInfo(
-				document,
-				listedPlanets[jack].name,
-				listedPlanets[jack].diameter,
-				listedPlanets[jack].star,
-				listedPlanets[jack].distance,
-				listedPlanets[jack].moons,
-				listedPlanets[jack].image
-			);
+			addDestinationInfo(document, jack.name, jack.diameter, jack.star, jack.distance, jack.moons, jack.image);
 		});
 
 	let form = document.querySelector("[data-testid='testForm']");
